@@ -40,6 +40,8 @@ public class QuestionController {
 	 
 	 @RequestMapping(value="/addQuestion", method=RequestMethod.POST)
 	 public String save(@ModelAttribute("q") QuestionVO q) {
+		 
+		 
 		 int i = questionService.insertQuestion(q);
 		 if(i > 0) {
 			 return "redirect:/community";

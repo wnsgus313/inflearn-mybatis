@@ -7,6 +7,7 @@ public class QuestionVO {
 	private String title, content, time_stamp, fileName;
 	private MultipartFile uploadFile;
 	
+	@Override
 	public String toString() {
 		return "QuestionVO [id=" + id + ", user_id=" + user_id + ", title=" + title + ", fileName=" + fileName + "]"; 
 	}

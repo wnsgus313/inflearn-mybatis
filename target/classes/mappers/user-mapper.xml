@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+	<insert id="insertUser">
+		insert into june_user(name, password)
+		values(#{name}, #{password})
+	</insert>
+	
+	<update id="updateUser">
+		update june_user set
+			id = #{id},
+			name = #{name},
+			password = #{password}
+		where id = #{id}
+	</update>
+	
+	<delete id="deleteUser">
+		delete from june_user
+		where id = #{id}
+	</delete>
+	
+	<select id="selectUserByInfo" parameterType="map" resultType="com.inflearnVO.UserVO">
+		select * from june_user
+		where name = #{info.name} and password = #{info.password}
+	</select>
+	
+	<select id="selectUserById" resultType="com.inflearnVO.UserVO">
+		select * from june_user
+		where id = #{id}
+	</select>
+	
+	<select id="selectListUser" resultType="map">
+		select * from june_user
+	</select>
+</mapper>

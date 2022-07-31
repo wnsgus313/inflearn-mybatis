@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+ <%
+	String name = (String)session.getAttribute("name");
+%>
+
+
 <header>
     <div class="container sep-bottom">
         <div class="header">
@@ -58,11 +63,28 @@
                 <span class="material-icons search-icon">search</span>
             </form>
 
-            <div class="navbar-item-right">
+<!--             <div class="navbar-item-right">
                 <a class="navbar-item" href="/open-knowledge">지식공유참여</a>
-                <button class="login">로그인</button>
+                <button class="login" onclick="location.href='/login'" style='cursor:pointer;'>로그인</button>
                 <button class="register">회원가입</button>
-            </div>
+            </div> -->
+            
+            <div class="navbar-item-right">
+            <%
+				if(name!=null){
+					%>
+					<div><%=name %> 님</div>
+					<button class="logout" onclick="location.href='/logout'">로그아웃</button>
+					<%
+				}
+				else{
+					%>
+		                <a class="navbar-item" href="/open-knowledge">지식공유참여</a>
+		                <button class="login" onclick="location.href='/login'" style='cursor:pointer;'>로그인</button>
+		                <button class="register">회원가입</button>
+				<%} 
+			%>
+            
         </div>
     </div>
 </nav>

@@ -110,6 +110,17 @@ button.register {
     font-weight: normal;
     color: white;
 }
+button.logout {
+    background-color: white;
+    height: 35px;
+    width: 80px;
+    border-radius: 4px;
+    border: 0.1px solid rgb(110, 103, 103);
+    font-size: calc(var(--font-size) * 1.6);
+    font-weight: normal;
+    color: rgb(110, 103, 103);
+}
+
 section.banner {
 }
 div.banner {

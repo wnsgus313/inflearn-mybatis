@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +17,7 @@
 
 <p class="question">제목 <span class="question">${question.title}</span></p>
 <p class="question">내용 <span class="question">${question.content}</span></p>
+<img width="300px" src="${pageContext.request.contextPath}/showImg?id=${question.id}">
 
 <button onclick="location.href='/editQuestion/${question.id}'">편집</button>
 <button onclick="location.href='/deleteQuestion/${question.id}'">삭제</button>

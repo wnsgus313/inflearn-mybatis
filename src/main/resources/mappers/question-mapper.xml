@@ -3,11 +3,12 @@
 <mapper namespace="Question">
 	
 	<insert id="insertQuestion">
-		insert into june_question(user_id, title, content)
+		insert into june_question(user_id, title, content, file_name)
 		values(
 			1,
 			#{title},
-			#{content}
+			#{content},
+			#{fileName}
 		)
 	</insert>
 	
@@ -25,11 +26,11 @@
 	</delete>
 	
 	<select id="selectOneQuestion" resultType="com.inflearnVO.QuestionVO">
-		select * from june_question
+		select id, user_id, title, content, time_stamp, file_name AS fileName from june_question
 		where id = #{id}
 	</select>
 	
 	<select id="selectListQuestion" resultType="map">
-		select * from june_question
+		select id, user_id, title, content, time_stamp, file_name AS fileName from june_question
 	</select>
 </mapper>

@@ -1,10 +1,15 @@
 package com.inflearnVO;
 
+import org.springframework.web.multipart.MultipartFile;
 
 public class QuestionVO {
 	private int id, user_id;
-	private String title, content, time_stamp;
+	private String title, content, time_stamp, fileName;
+	private MultipartFile uploadFile;
 	
+	public String toString() {
+		return "QuestionVO [id=" + id + ", user_id=" + user_id + ", title=" + title + ", fileName=" + fileName + "]"; 
+	}
 	public int getId() {
 		return id;
 	}
@@ -34,5 +39,18 @@ public class QuestionVO {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 }

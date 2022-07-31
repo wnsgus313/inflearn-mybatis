@@ -80,8 +80,8 @@
 				else{
 					%>
 		                <a class="navbar-item" href="/open-knowledge">지식공유참여</a>
-		                <button class="login" onclick="location.href='/login'" style='cursor:pointer;'>로그인</button>
-		                <button class="register">회원가입</button>
+		                <button class="login" onclick="location.href='/login'" style="cursor:pointer;">로그인</button>
+		                <button class="register" onclick="location.href='/register'" style="cursor:pointer;">회원가입</button>
 				<%} 
 			%>
             

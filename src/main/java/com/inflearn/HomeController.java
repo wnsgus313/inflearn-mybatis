@@ -28,6 +28,23 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping("register")
+	public String register() {
+		return "register";
+	}
+	
+	@RequestMapping(value = "/registerOk", method=RequestMethod.POST)
+	public String egisterOk(UserVO user) {
+		String returnUrl = "";
+		int i = userService.insertUser(user);
+		if(i > 0) {
+			return "redirect:/";
+		}else {
+			returnUrl = "registerfail";
+		}
+		return returnUrl;
+	}
+	
 	@RequestMapping("/login")
 	public String login() {
 		

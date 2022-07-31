@@ -30,5 +30,6 @@
 			</div>
 		</form>
 	</div>
+	<a href="/register" style="margin-left:48vw; margin-top:400px;">회원가입</a>
 </body>
 </html>

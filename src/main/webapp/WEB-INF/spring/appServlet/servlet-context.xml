@@ -45,4 +45,20 @@
 		<beans:property name="maxInMemorySize" value="52428800"/>
 		<beans:property name="defaultEncoding" value="utf-8"/>	
 	</beans:bean>
+	
+	<!-- interceptor 빈 생성 -->
+	<beans:bean id="LoginInterceptor" class="com.inflearn.LoginInterceptor" />
+	
+	<!-- Interceptor 등록/설정 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/**/" />
+			<exclude-mapping path="/" />
+			<exclude-mapping path="/login" />
+			<exclude-mapping path="/loginOk" />
+			<exclude-mapping path="/register" />
+			<exclude-mapping path="/registerOk" />
+			<beans:ref bean="LoginInterceptor" />
+		</interceptor>
+	</interceptors>
 </beans:beans>

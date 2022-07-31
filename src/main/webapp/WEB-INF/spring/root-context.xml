@@ -4,11 +4,19 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<!-- 	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<property name="driverClassName" value="com.mysql.jdbc.Driver" />		
 		<property name="url" value="jdbc:mysql://walab.handong.edu/camp2" />
 		<property name="username" value="camp2" />
 		<property name="password" value="DqYAaFSdSQrTsDf0" />
+	</bean> -->
+	
+
+	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="com.mysql.jdbc.Driver" />		
+		<property name="url" value="jdbc:mysql://db4free.net/june313"/>   
+		<property name="username" value="june313"/> 
+		<property name="password" value="123456789a"/>  
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
